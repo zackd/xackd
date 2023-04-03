@@ -1,0 +1,214 @@
+body {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(to bottom right, #070630 0%, #060454 100%);
+    height: 100vh;
+    /*max-height: 100vh;*/
+    font-family: "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    color: #fff;
+    text-align: center;
+}
+h1 {
+    font-size: 15em;
+}
+.title-wrap {
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+.container {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+}
+
+.under-construction {
+    position: absolute;
+    top: 0;
+}
+.under-construction p {
+    color: #fff;
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.d-none {
+    display: none;
+}
+#sPixel {
+    width: 1px;
+    height: 1px;
+}
+.spinner {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+.spinner:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.boom-animation {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.boom-animation .boom-container {
+    position: absolute;
+    display: flex;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    align-items: center;
+    transform: translateY(-50%);
+    left: 20%;
+    top: -300px;
+}
+.boom-animation .boom-container .shape {
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+    transform-origin: center center;
+}
+.boom-animation .boom-container .shape.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    transform-origin: 50% 80%;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    margin-left: -15px;
+    border-width: 0 2.5px 5px 2.5px;
+    border-color: transparent transparent #42e599 transparent;
+    animation-name: boom-triangle;
+}
+.boom-animation .boom-container .shape.triangle.big {
+    margin-left: -25px;
+    border-width: 0 5px 10px 5px;
+    border-color: transparent transparent #fade28 transparent;
+    animation-name: boom-triangle-big;
+}
+.boom-animation .boom-container .shape.disc {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #d15ff4;
+    animation-name: boom-disc;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+.boom-animation .boom-container .shape.circle {
+    width: 60px;
+    height: 60px;
+    animation-name: boom-circle;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    border-radius: 100%;
+    margin-left: -30px;
+}
+.boom-animation .boom-container .shape.circle.white {
+    border: 4px solid white;
+}
+.boom-animation .boom-container .shape.circle.big {
+    width: 100px;
+    height: 100px;
+    margin-left: 0;
+}
+.boom-animation .boom-container .shape.circle.big.white {
+    border: 4px solid white;
+}
+.boom-animation .boom-container .shape:after {
+    background-color: rgba(178, 215, 232, 0.2);
+}
+.boom-animation .boom-container .shape.triangle,
+.boom-animation .boom-container .shape.circle,
+.boom-animation .boom-container .shape.circle.big,
+.boom-animation .boom-container .shape.disc {
+    animation-delay: 0.38s;
+    animation-duration: 3s;
+}
+.boom-animation .boom-container .shape.circle {
+    animation-delay: 0.6s;
+}
+.boom-animation .boom-container.second {
+    left: 70%;
+    top: 135px;
+}
+.boom-animation .boom-container.second .shape.triangle, .boom-animation .boom-container.second .shape.circle, .boom-animation .boom-container.second .shape.circle.big, .boom-animation .boom-container.second .shape.disc {
+    animation-delay: 1.9s;
+}
+.boom-animation .boom-container.second .shape.circle {
+    animation-delay: 2.15s;
+}
+@keyframes boom-circle {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+@keyframes boom-triangle-big {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+        transform: scale(2.5) translate(50px, -50px) rotate(360deg);
+    }
+}
+@keyframes boom-triangle {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+        transform: scale(3) translate(20px, 40px) rotate(360deg);
+    }
+}
+@keyframes boom-disc {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+        transform: scale(2) translate(-70px, -30px);
+    }
+}
